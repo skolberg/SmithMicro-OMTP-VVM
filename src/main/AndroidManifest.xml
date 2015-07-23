@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.orange.labs.uk.omtp"
+    package="com.smithmicro.vvm.omtp"
     android:versionCode="203"
     android:versionName="3.03" >
 
@@ -9,17 +9,18 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL" />
 
     <application>
         <service
-            android:name=".service.OmtpSmsReceiverHandler"
+            android:name="com.smithmicro.vvm.omtp.service.OmtpSmsReceiverHandler"
             android:exported="true" >
         </service>
         
-        <service android:name=".service.fetch.OmtpFetchService" />
+        <service android:name="com.smithmicro.vvm.omtp.service.fetch.OmtpFetchService" />
         
         <receiver
-            android:name=".receiver.OmtpSmsReceiver"
+            android:name="com.smithmicro.vvm.omtp.receiver.OmtpSmsReceiver"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="android.intent.action.DATA_SMS_RECEIVED" />
@@ -27,13 +28,13 @@
                 <data android:scheme="sms" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".receiver.OmtpSmsSentMessageStatusReceiver" >
+        <receiver android:name="com.smithmicro.vvm.omtp.receiver.OmtpSmsSentMessageStatusReceiver" >
             <intent-filter>
                 <action android:name="com.orange.labs.uk.omtp.action.SMS_SENT_STATUS" />
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".receiver.OmtpFetchReceiver"
+            android:name="com.smithmicro.vvm.omtp.receiver.OmtpFetchReceiver"
             android:enabled="true" >
             <intent-filter>
                 <action android:name="com.orange.labs.uk.omtp.VOICEMAIL_FETCH" />
@@ -49,7 +50,7 @@
             </intent-filter>
         </receiver>
         <receiver
-            android:name=".receiver.VoicemailProviderChangeReceiver"
+            android:name="com.smithmicro.vvm.omtp.receiver.VoicemailProviderChangeReceiver"
             android:enabled="true" >
 
             <!-- filter for uris that represent a directory of voicemails (mimeType dir) -->

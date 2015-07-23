@@ -21,7 +21,7 @@ package org.apache.james.mime4j;
 
 import com.android.email.Email;
 import com.android.email.mail.transport.LoggingInputStream;
-import com.orange.labs.uk.omtp.config.StackStaticConfiguration;
+import com.smithmicro.vvm.omtp.config.StackStaticConfiguration;
 
 import org.apache.james.mime4j.decoder.Base64InputStream;
 import org.apache.james.mime4j.decoder.QuotedPrintableInputStream;

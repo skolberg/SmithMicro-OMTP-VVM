@@ -17,7 +17,7 @@
 package com.android.email;
 
 
-import com.orange.labs.uk.omtp.config.StackStaticConfiguration;
+import com.smithmicro.vvm.omtp.config.StackStaticConfiguration;
 
 public class Email extends EmailConfiguration {
 
